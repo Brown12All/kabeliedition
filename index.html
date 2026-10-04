@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="img/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kabeli Édition · Magazines personnalisés</title>
+<meta name="description" content="Magazines, journaux, brevets, lettres et invitations personnalisés, faits à Kinshasa.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+<style>
+:root{--bg:#fff;--fg:#000;--mut:#666;--line:#e3e3e3;--card:#f4f4f4;--acc:#b4566a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--fg:#fff;--mut:#a3a3a3;--line:#262626;--card:#111;--acc:#e3899b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--mut:#a3a3a3;--line:#262626;--card:#111;--acc:#e3899b;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.6 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+h1{font-size:clamp(2.7rem,7.5vw,5.4rem)}h2{font-size:clamp(2rem,4.5vw,3.3rem)}h3{font-size:1.6rem}
+p{margin:0}.sub{color:var(--mut);max-width:56ch;margin-top:14px}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;gap:18px;height:58px}
+.brand{display:flex;align-items:center;gap:10px;font:600 1.3rem 'Cormorant Garamond',serif;color:var(--fg);text-decoration:none;margin-right:auto}
+.brand img{width:34px;height:34px;border-radius:50%}
+nav{display:flex;align-items:center;gap:18px}nav a{color:var(--fg);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--acc)}
+.btn{display:inline-block;padding:.8rem 1.4rem;border:1px solid var(--fg);color:var(--fg);text-decoration:none;font:500 1rem Jost,sans-serif;border-radius:999px;background:transparent;cursor:pointer}
+.btn.p{background:var(--fg);color:var(--bg)}.btn.s{padding:.45rem 1rem;font-size:.9rem}
+#th{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);cursor:pointer;font-size:1rem}
+@media(max-width:700px){nav a:not(.btn){display:none}}
+.hero{position:relative;min-height:calc(100svh - 58px);display:flex;align-items:flex-start;overflow:hidden}
+#gl,#fb{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#fb{display:none;object-fit:contain;padding:48% 0 6%}
+.hero .w{position:relative;z-index:1;padding-top:clamp(28px,7vh,90px)}
+.hero .t{max-width:560px}.hero .sub{font-size:1.1rem}
+.hero .go{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+@media(min-width:760px){.hero{align-items:center}.hero .w{padding-top:0}}
+section{padding:clamp(56px,10vw,110px) 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:36px}
+.card{border:1px solid var(--line);background:var(--card);overflow:hidden;transition:transform .15s ease-out;will-change:transform}
+.card>img,.lg{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.lg{background:#000;display:grid;place-items:center}.lg img{width:52%}
+.card div.i{padding:16px 18px 22px}.card p{color:var(--mut);margin-top:8px;font-size:.95rem}
+#gal{columns:2;column-gap:12px;margin-top:36px}
+@media(min-width:800px){#gal{columns:3}}
+.g{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid}
+.g img{width:100%;display:block}
+.vid{position:relative;margin:36px auto 0;width:min(100%,calc(78vh*480/854));aspect-ratio:480/854;background:#000}
+.vid video,.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid .btn{position:absolute;left:16px;bottom:16px;background:var(--bg)}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.chip input{position:absolute;opacity:0}
+.chip span{display:flex;flex-direction:column;gap:2px;height:100%;border:1px solid var(--line);padding:12px 14px;cursor:pointer}
+.chip small{color:var(--mut)}.chip b{font-weight:500}
+.chip input:checked+span{border-color:var(--fg);background:var(--card);box-shadow:inset 0 0 0 1px var(--fg)}
+.chip input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+h4{font:500 1.05rem Jost,sans-serif;margin:34px 0 0}
+.res{border:1px solid var(--fg);padding:22px;margin-top:28px;display:grid;gap:6px}
+.big{font:600 2.6rem/1 'Cormorant Garamond',serif}.mut{color:var(--mut);font-size:.92rem}
+.two{display:grid;gap:40px;margin-top:36px}@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+ol{margin:14px 0 0;padding-left:1.3rem;display:grid;gap:8px}
+.pay{border:1px solid var(--line);background:var(--card);padding:18px;margin-top:22px;display:grid;gap:4px}
+.pay b{font:600 1.7rem 'Cormorant Garamond',serif}
+input.t{width:100%;margin-top:10px;padding:.8rem 1rem;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;border-radius:0}
+.warn{margin-top:22px;border-left:3px solid var(--acc);padding-left:14px}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--mut);font-size:.92rem}
+footer .w{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer a{color:var(--fg)}
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.88)}dialog img{display:block;max-width:96vw;max-height:94vh;cursor:zoom-out}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+.bk{position:relative;width:min(100%,900px);aspect-ratio:1000/750;perspective:1800px;background:#111;overflow:hidden;cursor:pointer;margin:36px auto 0}
+.bk img,#bw{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#bw{transform-style:preserve-3d;display:none}#bw img{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+#bu{display:none}#bb{transform:rotateY(180deg)}
+.fbn{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.pvw{perspective:1000px;display:grid;place-items:center;padding:10px}
+.cvr{position:relative;width:min(78vw,300px);aspect-ratio:3/4.1;overflow:hidden;color:#fff;font-family:'Cormorant Garamond',serif;box-shadow:0 30px 50px -22px #000b;transition:transform .15s}
+.cvr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}.cvr.ph img{opacity:1}
+.cvr::after{content:'';position:absolute;inset:0;background:linear-gradient(#0004,transparent 30%,transparent 55%,#0008)}
+.cvr b,.cvr span,.cvr i,.cvr em,.cvr u{position:absolute;z-index:1;text-shadow:0 2px 12px #0008}
+.cvr b{top:6%;left:0;right:0;text-align:center;font-size:2rem;line-height:1}
+.cvr span{left:8%;bottom:14%;font-size:2.6rem;font-weight:600;line-height:1}
+.cvr i{left:8%;bottom:9%;font:400 .85rem Jost,sans-serif}
+.cvr em{right:8%;bottom:4%;font:500 .6rem Jost,sans-serif;letter-spacing:.1em;font-style:normal}
+.cvr u{right:8%;bottom:9%;width:22%;height:8%;background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 4px)}
+.s0{background:linear-gradient(160deg,#2b2a8c,#6a4fc0 60%,#1a1650)}.s1{background:linear-gradient(160deg,#7a2a22,#c4553b)}.s2{background:linear-gradient(160deg,#000,#666)}.s3{background:linear-gradient(160deg,#0e3a5c,#2a7fb0)}
+label.f{display:grid;gap:4px;margin-top:14px;color:var(--mut);font-size:.92rem}
+.stp{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+.stp li{border-top:4px solid var(--line);padding-top:8px;color:var(--mut)}.stp li.on{border-color:var(--fg);color:var(--fg)}.stp li.cur{border-color:var(--acc);font-weight:500}
+.av{display:flex;flex-wrap:wrap;justify-content:center;gap:26px;margin-top:40px;padding:12px 0}
+.am{width:240px;margin:0;padding:16px;background:var(--card);border:1px solid var(--line);transform:rotate(var(--r));animation:fl var(--d) ease-in-out infinite alternate}
+.am img{width:48px;height:48px;border-radius:50%;object-fit:cover;display:block;margin-bottom:10px}
+.am blockquote{margin:0;font:italic 500 1.15rem/1.3 'Cormorant Garamond',serif}.am figcaption{margin-top:10px;color:var(--mut);font-size:.9rem}
+@keyframes fl{from{transform:rotate(var(--r)) translateY(0)}to{transform:rotate(calc(var(--r)*-.6)) translateY(-12px)}}
+details{border-top:1px solid var(--line);padding:16px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:500 1.05rem Jost,sans-serif}details p{margin-top:10px;color:var(--mut);max-width:62ch}
+.how{counter-reset:s}.how li{margin-top:6px}
+.row{display:flex;gap:10px;max-width:440px;margin-top:20px}.row .t{margin:0}
+.ord{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}
+@media(prefers-reduced-motion:reduce){.am{animation:none}}
+
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="brand" href="#top"><img data-k="logo" alt="">Kabeli Édition</a>
+<nav><a href="#creations">Créations</a><a href="#feuilleter">Feuilleter</a><a href="#apercu">Aperçu</a><a href="#tarifs">Tarifs</a><a class="btn p s" href="#commander">Commander</a></nav>
+<button id="th" type="button" aria-label="Changer de thème">◐</button>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<canvas id="gl" aria-hidden="true"></canvas><img id="fb" data-k="c_lumiere" alt="Couverture de magazine Kabeli Édition">
+<div class="w"><div class="t">
+<h1>Chaque page raconte une histoire, la tienne.</h1>
+<p class="sub">Magazines, journaux, brevets, lettres et invitations personnalisés, faits à Kinshasa pour rendre chaque personne spéciale et inoubliable.</p>
+<div class="go"><a class="btn p" href="#commander">Commander mon magazine</a><a class="btn" href="#creations">Voir les créations</a></div>
+</div></div>
+</div>
+
+<section id="creations"><div class="w">
+<h2>Nos créations</h2>
+<p class="sub">Un souvenir imprimé, pensé autour de la personne que tu veux honorer.</p>
+<div class="cards">
+<article class="card tilt"><img data-k="c_lumiere" alt="Couverture de magazine personnalisé"><div class="i"><h3>Magazines</h3><p>Couverture, biographie, lettres, versets et photos réunis dans un souvenir pour la vie.</p></div></article>
+<article class="card tilt"><img data-k="n_didit" alt="Journal personnalisé « You did it »"><div class="i"><h3>Journaux</h3><p>Ta réussite à la une, comme une vraie édition spéciale.</p></div></article>
+<article class="card tilt"><img data-k="s_pack" alt="Magazine et enveloppe Kabeli Édition"><div class="i"><h3>Lettres</h3><p>Des mots d'amour et de souvenirs, mis en page pour être gardés.</p></div></article>
+<article class="card tilt"><div class="lg"><img data-k="logo" alt=""></div><div class="i"><h3>Brevets et invitations</h3><p>Réalisés sur mesure selon ton événement.</p></div></article>
+</div></div></section>
+
+<section id="feuilleter" style="padding-top:0"><div class="w">
+<h2>Feuillette un vrai magazine</h2>
+<p class="sub">Un magazine complet, page par page. Touche le côté droit ou gauche pour tourner les pages.</p>
+<div class="bk" id="bk"><img id="b0" alt="Pages d'un magazine Kabeli Édition"><img id="bu" alt=""><div id="bw"><img id="bf" alt=""><img id="bb" alt=""></div></div>
+<div class="fbn"><button class="btn s" id="fp" type="button">Page précédente</button><span class="mut" id="fc"></span><button class="btn s" id="fn" type="button">Page suivante</button></div>
+</div></section>
+<section id="galerie" style="padding-top:0"><div class="w">
+<h2>Dans les pages</h2>
+<p class="sub">Couvertures, pages intérieures et journaux déjà offerts. Touche une image pour l'agrandir.</p>
+<div id="gal"></div>
+</div></section>
+
+<section id="stand" style="padding-top:0"><div class="w">
+<h2>Au stand, en exposition</h2>
+<p class="sub">Une grande personnalité du pays est venue visiter le stand Kabeli Édition lors d'un exposé.</p>
+<div class="vid"><img data-k="v_poster" alt="Aperçu de la vidéo de la visite au stand"><video id="v" playsinline></video><button id="pv" class="btn" type="button">Lire la vidéo</button></div>
+</div></section>
+
+<section id="apercu" style="padding-top:0"><div class="w">
+<h2>Crée ton aperçu</h2>
+<p class="sub">Écris le prénom, choisis un style et ajoute une photo. Ta photo reste sur ton téléphone, rien n'est envoyé.</p>
+<div class="two" style="align-items:center">
+<div class="pvw"><div class="cvr tilt s0" id="cvr"><img id="cph" alt=""><b id="ct1">Happy birthday</b><span id="ct2">Prénom</span><i id="ct3">Vive tes 23 ans</i><em>KABELI ÉDITION</em><u></u></div></div>
+<div>
+<label class="f">Titre<select class="t" id="it" style="margin:0"><option>Happy birthday</option><option>Félicitations</option><option>Joyeuse fête</option><option>Mon magazine</option></select></label>
+<label class="f">Prénom<input class="t" id="ip" maxlength="20" placeholder="Prénom" style="margin:0"></label>
+<label class="f">Phrase sous le prénom<input class="t" id="is" maxlength="30" value="Vive tes 23 ans" style="margin:0"></label>
+<h4>Style</h4><div class="chips" id="st"></div>
+<label class="f">Photo de couverture<input class="t" id="iph" type="file" accept="image/*" style="margin:0"></label>
+<a class="btn p" id="pb" href="#commander" style="margin-top:22px">Commander ce modèle</a>
+</div></div></div></section>
+<section id="how" style="padding-top:0"><div class="w">
+<h2>Comment ça marche</h2>
+<ol class="how"><li>Tu choisis ton format et ton délai.</li><li>Tu nous envoies tes textes et tes photos, dans l'ordre indiqué.</li><li>Tu envoies l'acompte : la moitié du total plus 3.000 FC de frais de retrait.</li><li>Kabeli crée la mise en page, tu valides, puis c'est l'impression et la livraison.</li></ol>
+</div></section>
+<section id="tarifs" style="padding-top:0"><div class="w">
+<h2>Tarifs</h2>
+<p class="sub">Choisis le nombre de pages et le délai. Le simulateur calcule le total et l'acompte à envoyer.</p>
+<h4>Format du magazine</h4><div class="chips" id="fm"></div>
+<h4>Délai</h4><div class="chips" id="dl"></div>
+<div class="res" aria-live="polite">
+<span class="mut">Total</span><span class="big" id="tot"></span>
+<span class="mut" style="margin-top:12px">Acompte à envoyer pour commander</span><span class="big" id="dep"></span>
+<span class="mut" id="dd"></span>
+<span class="mut">La livraison coûte 10.000 à 15.000 FC en plus.</span>
+</div>
+</div></section>
+
+<section id="commander" style="padding-top:0"><div class="w">
+<h2>Commander</h2>
+<div class="two">
+<div>
+<h3>Informations à fournir</h3>
+<p class="sub" style="margin-top:8px">Envoie-les dans cet ordre :</p>
+<ol><li>La lettre qui explique pourquoi tu fais ce magazine</li><li>La biographie de la personne</li><li>4 versets, bibliques ou autres</li><li>1 ou 2 lettres personnelles</li><li>Le nom complet et la date de naissance</li></ol>
+</div>
+<div>
+<h3>Paiement</h3>
+<p class="sub" style="margin-top:8px">Envoie la moitié du montant, plus 3.000 FC de frais de retrait.</p>
+<div class="pay"><span class="mut">Orange Money</span><b id="om">0850220652</b><span>Kerene Beloko</span>
+<button class="btn s" id="cp" type="button" style="justify-self:start;margin-top:8px">Copier le numéro</button></div>
+<input class="t" id="nm" placeholder="Ton nom" autocomplete="name" aria-label="Ton nom"><input class="t" id="tl" type="tel" placeholder="Ton numéro" autocomplete="tel" aria-label="Ton numéro"><input class="t" id="cm" placeholder="Commune de livraison" aria-label="Commune de livraison">
+<label style="display:flex;gap:10px;align-items:center;margin-top:14px"><input type="checkbox" id="gf"> C'est un cadeau surprise</label><label class="f">Date de livraison souhaitée<input class="t" id="gd" type="date" style="margin:0"></label>
+<a class="btn p" id="wa" href="#" target="_blank" rel="noopener" style="margin-top:14px">Envoyer ma commande sur WhatsApp</a>
+<p class="warn">Aucune modification n'est possible après validation.</p>
+</div></div>
+</div></section>
+<section id="suivi" style="padding-top:0"><div class="w">
+<h2>Suivre ma commande</h2>
+<p class="sub">Entre le code que Kabeli t'a donné à la commande.</p>
+<div class="row"><input class="t" id="sc" placeholder="KE-1234" aria-label="Code de commande"><button class="btn p" id="sb" type="button">Suivre</button></div>
+<div id="sr" aria-live="polite" style="margin-top:8px"></div>
+</div></section>
+<section id="avis" style="padding-top:0;overflow:hidden"><div class="w">
+<h2>Ils ont reçu leur magazine</h2>
+<p class="sub">Laisse ton avis avec ta photo, il apparaît juste en dessous.</p>
+<div class="two" style="margin-top:24px"><div>
+<input class="t" id="an" maxlength="40" placeholder="Ton nom" aria-label="Ton nom" style="margin-top:0">
+<input class="t" id="ac2" maxlength="220" placeholder="Ton petit commentaire" aria-label="Ton commentaire">
+<label class="f">Ta photo (facultatif)<input class="t" id="aph" type="file" accept="image/*" style="margin:0"></label>
+<button class="btn p" id="af" type="button" style="margin-top:16px">Publier mon avis</button><p class="mut" id="as" aria-live="polite" style="margin-top:8px"></p>
+</div></div>
+<div class="av" id="av"></div>
+</div></section>
+<section id="faq" style="padding-top:0"><div class="w">
+<h2>Questions fréquentes</h2><div style="margin-top:28px">
+<details><summary>Quels sont les délais ?</summary><p>Standard : 7 à 14 jours. Express : 4 à 6 jours. Max express : 24 h à 2 jours. Ultra express : moins de 24 h. Les options express ont un supplément.</p></details>
+<details><summary>Où livrez-vous ?</summary><p>Nous livrons partout à Kinshasa. La livraison coûte entre 10.000 et 15.000 FC.</p></details>
+<details><summary>Comment payer ?</summary><p>Tu envoies la moitié du montant plus 3.000 FC de frais de retrait, par Orange Money, M-Pesa ou Airtel Money. Pour M-Pesa et Airtel Money, demande le numéro sur WhatsApp.</p></details>
+<details><summary>Puis-je modifier après validation ?</summary><p>Non, aucune modification n'est possible après validation. Relis bien tes textes et l'aperçu avant de valider.</p></details>
+<details><summary>Que se passe-t-il si mes photos sont de mauvaise qualité ?</summary><p>Nous vérifions chaque photo avant la mise en page. Si l'une d'elles est floue ou trop petite pour l'impression, nous te prévenons et tu peux nous en envoyer une autre. Plus la photo est nette et lumineuse, plus le rendu imprimé est beau.</p></details>
+</div></div></section>
+</main>
+<section id="adm" hidden><div class="w"><h2>Espace Kabeli</h2><div class="row"><input class="t" id="ac" type="password" placeholder="Code secret" aria-label="Code secret"><button class="btn p" id="ao" type="button">Entrer</button></div><p class="mut" id="am" aria-live="polite" style="margin-top:10px"></p>
+<div id="ap" hidden><div class="row"><input class="t" id="op" placeholder="Prénom du client" maxlength="30"><button class="btn p" id="oc" type="button">Créer la commande</button></div><div id="ol" style="margin-top:20px"></div></div></div></section>
+
+<footer><div class="w"><span>Kabeli Édition · Kinshasa, RD Congo</span><a href="#admin" style="margin-right:auto;margin-left:8px">Espace Kabeli</a><a href="https://www.instagram.com/kabeli_edition" target="_blank" rel="noopener">@kabeli_edition</a>
+<br>
+<span>Site conçu par Brown, développeur web</span></div></footer>
+<dialog id="lb"><img id="li" alt=""></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const IM={"c_lumiere": "img/c_lumiere.jpg", "p_bio": "img/p_bio.jpg", "c_barbine": "img/c_barbine.jpg", "c_gloria": "img/c_gloria.jpg", "p_about": "img/p_about.jpg", "v_poster": "img/v_poster.jpg", "c_allegra": "img/c_allegra.jpg", "g_intro": "img/g_intro.jpg", "c_claudia": "img/c_claudia.jpg", "p_intro": "img/p_intro.jpg", "s_pack": "img/s_pack.jpg", "n_didit": "img/n_didit.jpg", "p_vision": "img/p_vision.jpg", "p_itsme": "img/p_itsme.jpg", "g_resol": "img/g_resol.jpg", "g_cover": "img/g_cover.jpg", "g_versets": "img/g_versets.jpg", "p_resol": "img/p_resol.jpg", "g_cal": "img/g_cal.jpg", "c_esther": "img/c_esther.jpg", "p_letters": "img/p_letters.jpg", "p_mon": "img/p_mon.jpg", "g_agc": "img/g_agc.jpg", "p_photos": "img/p_photos.jpg", "n_breaking": "img/n_breaking.jpg", "n_berenice": "img/n_berenice.jpg", "g_vents": "img/g_vents.jpg", "logo": "img/logo.png"};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$$('[data-k]').forEach(e=>e.src=IM[e.dataset.k]);
+// thème
+const rt=document.documentElement;
+try{const s=localStorage.getItem('th');if(s)rt.dataset.theme=s}catch(e){}
+$('#th').onclick=()=>{const d=rt.dataset.theme?rt.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;rt.dataset.theme=d?'light':'dark';try{localStorage.setItem('th',rt.dataset.theme)}catch(e){}};
+// cartes inclinables
+$$('.tilt').forEach(c=>{c.onpointermove=e=>{if(e.pointerType==='touch')return;const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*12}deg) rotateX(${-y*12}deg)`};c.onpointerleave=()=>c.style.transform=''});
+// galerie
+const GK=['g_agc','g_vents','g_versets','g_cal','c_lumiere','p_intro','n_didit','c_allegra','p_about','p_bio','c_gloria','p_resol','n_breaking','p_vision','c_claudia','p_itsme','c_esther','p_letters','c_barbine','p_photos','n_berenice','p_mon','s_pack'];
+$('#gal').innerHTML=GK.map(k=>`<button class="g" type="button" data-z="${k}"><img alt="Création Kabeli Édition" loading="lazy" src="${IM[k]}"></button>`).join('');
+$('#gal').onclick=e=>{const b=e.target.closest('[data-z]');if(b){$('#li').src=IM[b.dataset.z];$('#lb').showModal()}};
+$('#lb').onclick=()=>$('#lb').close();
+// vidéo
+$('#pv').onclick=()=>{const v=$('#v');v.src='img/video.mp4';v.controls=true;$('#pv').hidden=true;$('.vid img').hidden=true;v.play()};
+// tarifs
+const F=[[12,34000,'24 photos'],[16,45000,''],[20,56000,'40 photos'],[32,90000,'65 photos'],[40,112000,'80 photos'],[52,146000,'100 photos'],[72,202000,'120 photos']];
+const D=[['Standard','7 à 14 jours',0],['Express','4 à 6 jours',20000],['Max express','24 h à 2 jours',42000],['Ultra express','moins de 24 h',70000]];
+const fc=n=>n.toLocaleString('de-DE')+' FC';
+$('#fm').innerHTML=F.map((f,i)=>`<label class="chip"><input type="radio" name="f" value="${i}"${i==2?' checked':''}><span>${f[0]} pages<small>${f[2]||'&nbsp;'}</small><b>${fc(f[1])}</b></span></label>`).join('');
+$('#dl').innerHTML=D.map((d,i)=>`<label class="chip"><input type="radio" name="d" value="${i}"${i==0?' checked':''}><span>${d[0]}<small>${d[1]}</small><b>${d[2]?'+ '+fc(d[2]):'Inclus'}</b></span></label>`).join('');
+let msg='',PV='';
+function calc(){const f=F[+$('[name=f]:checked').value],d=D[+$('[name=d]:checked').value],t=f[1]+d[2],h=t/2;
+$('#tot').textContent=fc(t);$('#dep').textContent=fc(h+3000);$('#dd').textContent=`La moitié du total (${fc(h)}) plus 3.000 FC de frais de retrait.`;
+msg=`Bonjour Kabeli Édition, je souhaite commander un magazine de ${f[0]} pages (${fc(f[1])}), délai ${d[0].toLowerCase()} (${d[1]}). Total : ${fc(t)}. Nom : ${$('#nm').value||'…'}. Tél : ${$('#tl').value||'…'}. Livraison : ${$('#cm').value||'…'}.`+PV+($('#gf').checked?` Cadeau surprise${$('#gd').value?', à livrer le '+$('#gd').value:''}.`:'')}
+$$('.chip input').forEach(i=>i.onchange=calc);$$('#commander input').forEach(i=>{i.oninput=calc;i.onchange=calc});calc();
+const WA='243850220652';
+$('#wa').onclick=e=>{e.currentTarget.href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`};
+$('#cp').onclick=async e=>{try{await navigator.clipboard.writeText($('#om').textContent);e.target.textContent='Numéro copié'}catch(x){e.target.textContent='Copie impossible'}};
+
+// feuilletage
+(()=>{const VK=['g_cover','g_intro','p_bio','g_versets','g_resol','p_vision','g_agc','p_photos','g_vents'],R='inset(0 0 0 50%)',L='inset(0 50% 0 0)';let vi=0,busy=0;
+const b0=$('#b0'),bu=$('#bu'),bw=$('#bw'),bf=$('#bf'),bb=$('#bb');b0.src=IM[VK[0]];
+const upd=()=>$('#fc').textContent=(vi+1)+' / '+VK.length;upd();
+function turn(d){const n=vi+d;if(busy||n<0||n>=VK.length)return;busy=1;
+bu.src=IM[VK[n]];bu.style.clipPath=d>0?R:L;bf.src=IM[VK[vi]];bf.style.clipPath=d>0?R:L;bb.src=IM[VK[n]];bb.style.clipPath=d>0?L:R;
+bw.style.transition='none';bw.style.transform='rotateY(0)';bw.style.display='block';bu.style.display='block';
+requestAnimationFrame(()=>requestAnimationFrame(()=>{bw.style.transition='transform 1s ease-in-out';bw.style.transform='rotateY('+(-180*d)+'deg)'}));
+setTimeout(()=>{vi=n;b0.src=IM[VK[n]];bw.style.display='none';bu.style.display='none';busy=0;upd()},1050)}
+$('#bk').onclick=e=>turn(e.offsetX>e.currentTarget.clientWidth/2?1:-1);$('#fp').onclick=()=>turn(-1);$('#fn').onclick=()=>turn(1)})();
+// aperçu
+const SN=['Violet','Rouge','Noir et blanc','Bleu'];
+$('#st').innerHTML=SN.map((s,i)=>`<label class="chip"><input type="radio" name="st" value="${i}"${i?'':' checked'}><span><b>${s}</b></span></label>`).join('');
+function pr(){$('#ct1').textContent=$('#it').value;$('#ct2').textContent=$('#ip').value||'Prénom';$('#ct3').textContent=$('#is').value;
+$('#cvr').className='cvr tilt s'+$('[name=st]:checked').value+($('#cph').dataset.on?' ph':'')}
+['#it','#ip','#is'].forEach(s=>$(s).oninput=pr);$$('[name=st]').forEach(i=>i.onchange=pr);
+$('#iph').onchange=e=>{const f=e.target.files[0];if(f){$('#cph').src=URL.createObjectURL(f);$('#cph').dataset.on=1;pr()}};
+$('#pb').onclick=()=>{PV=` Aperçu choisi : « ${$('#it').value} », prénom ${$('#ip').value||'…'}, « ${$('#is').value} », style ${SN[+$('[name=st]:checked').value].toLowerCase()}${$('#cph').dataset.on?', photo à envoyer':''}.`;calc()};
+// avis, suivi, espace Kabeli
+(async()=>{
+const HASH='da816ef8eb207c7279b5fc0f7f78d4a9798ccc856afbbe6c4c11281a7fbe1e8e',ST=['Reçu','Mise en page','Impression','Livraison'];let DB=null,ADM=false,DBL=[];
+
+const lg=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},ls=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+function renderAvis(l){const b=$('#av');b.textContent='';const tot=l.length;if(!ADM)l=l.slice(0,5);l.forEach((a,i)=>{const c=document.createElement('figure');c.className='am';c.style.setProperty('--r',(i%2?2.5:-3)+'deg');c.style.setProperty('--d',(4+i%4)+'s');
+if(/^data:image\/jpeg;base64,/.test(a.f||'')){const im=new Image();im.src=a.f;im.alt='';c.append(im)}
+const q=document.createElement('blockquote');q.textContent=a.c;const n=document.createElement('figcaption');n.textContent=a.n;c.append(q,n);
+if(ADM&&a.id){const x=document.createElement('button');x.type='button';x.textContent='Supprimer';x.className='btn s';x.onclick=async()=>{try{await DB.collection('avis').doc(a.id).delete()}catch(e){}};c.append(x)}b.append(c)});
+if(tot>l.length){const m=document.createElement('p');m.className='big';m.textContent='+'+(tot-l.length)+' avis';b.append(m)}if(!tot)b.textContent='Sois la première personne à laisser un avis.'}
+const refresh=()=>renderAvis([...(lg('avis')||[]),...DBL].sort((a,b)=>b.t-a.t));refresh();
+if(DB)try{DB.collection('avis').orderBy('t','desc').limit(24).onSnapshot(s=>{DBL=s.docs.map(d=>({...d.data(),id:d.id}));refresh()},()=>{})}catch(e){}
+const shrink=f=>new Promise(r=>{const i=new Image();i.onload=()=>{const c=document.createElement('canvas');c.width=c.height=96;const s=Math.min(i.width,i.height);c.getContext('2d').drawImage(i,(i.width-s)/2,(i.height-s)/2,s,s,0,0,96,96);r(c.toDataURL('image/jpeg',.7))};i.onerror=()=>r('');i.src=URL.createObjectURL(f)});
+$('#af').onclick=async()=>{const n=$('#an').value.trim().slice(0,40),c=$('#ac2').value.trim().slice(0,220);if(!n||!c){$('#as').textContent='Écris ton nom et ton commentaire.';return}
+const a={n,c,f:$('#aph').files[0]?await shrink($('#aph').files[0]):'',t:Date.now()};let ok=false;
+if(DB)try{await DB.collection('avis').doc('a'+a.t.toString(36)+Math.random().toString(36).slice(2,5)).set(a);ok=true}catch(e){}
+if(!ok){const l=lg('avis')||[];l.unshift(a);ls('avis',l);refresh()}
+$('#as').textContent=ok?'Merci, ton avis est publié.':'Merci, ton avis est enregistré sur cet appareil.';$('#an').value=$('#ac2').value=''};
+// suivi
+$('#sb').onclick=async()=>{const c=$('#sc').value.trim().toUpperCase(),r=$('#sr');let o=null;
+try{if(DB){const s=await DB.collection('commandes').doc(c).get();o=s.exists?s.data():null}}catch(e){}
+if(!o)o=(lg('cmd')||{})[c]||null;r.textContent='';
+if(!o){r.textContent='Aucune commande avec ce code. Vérifie-le ou écris-nous sur WhatsApp.';return}
+r.innerHTML=`<p><b></b></p><ol class="stp">${ST.map((x,i)=>`<li class="${i<=o.s?'on':''}${i==o.s?' cur':''}">${x}</li>`).join('')}</ol>`;r.querySelector('b').textContent='Commande de '+o.p};
+// espace Kabeli
+const showAdm=()=>{if(location.hash==='#admin'){$('#adm').hidden=false;$('#adm').scrollIntoView()}};showAdm();addEventListener('hashchange',showAdm);
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+function draw(l){const b=$('#ol');b.textContent='';l.forEach(o=>{const d=document.createElement('div');d.className='ord';const t=document.createElement('span');t.textContent=o.id+' · '+o.p;const s=document.createElement('select');s.className='t';s.style.cssText='margin:0;width:auto';ST.forEach((x,i)=>s.add(new Option(x,i)));s.value=o.s;
+s.onchange=async()=>{try{if(DB)await DB.collection('commandes').doc(o.id).update({s:+s.value});else throw 0}catch(e){const m=lg('cmd')||{};if(m[o.id]){m[o.id].s=+s.value;ls('cmd',m)}}};d.append(t,s);b.append(d)});if(!l.length)b.textContent='Aucune commande.'}
+function list(){if(DB)try{DB.collection('commandes').orderBy('t','desc').limit(50).onSnapshot(s=>draw(s.docs.map(d=>({...d.data(),id:d.id}))),()=>{});return}catch(e){}
+const m=lg('cmd')||{};draw(Object.keys(m).map(k=>({...m[k],id:k})))}
+$('#ao').onclick=async()=>{if(await sha($('#ac').value.trim())!==HASH){$('#am').textContent='Code incorrect.';return}
+ADM=true;$('#am').textContent=DB?'':'Mode local : les données restent sur cet appareil.';$('#ap').hidden=false;list();refresh()};
+$('#oc').onclick=async()=>{const p=$('#op').value.trim();if(!p)return;const id='KE-'+(1000+Math.floor(Math.random()*9000)),o={p,s:0,t:Date.now()};let ok=false;
+try{if(DB){await DB.collection('commandes').doc(id).set(o);ok=true}}catch(e){}
+if(!ok){const m=lg('cmd')||{};m[id]=o;ls('cmd',m);list()}$('#am').textContent='Commande créée : '+id+'. Donne ce code au client.';$('#op').value=''};
+})();
+// magazine 3D
+(()=>{const cv=$('#gl');let R;
+try{if(!window.THREE)throw 0;R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true})}catch(e){cv.style.display='none';$('#fb').style.display='block';return}
+R.outputEncoding=THREE.sRGBEncoding;R.setPixelRatio(Math.min(devicePixelRatio,2));
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,.1,60);cam.position.z=9;
+sc.add(new THREE.AmbientLight(0xffffff,.85));const dl=new THREE.DirectionalLight(0xffffff,.8);dl.position.set(3,4,6);sc.add(dl);
+const ks=['c_lumiere','c_allegra','c_gloria','c_esther','c_claudia','c_barbine'],L=new THREE.TextureLoader();
+const T=ks.map(k=>{const t=L.load(IM[k]);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return t});
+const pm=new THREE.MeshStandardMaterial({color:0xf2f0ec,roughness:.9}),fm=new THREE.MeshStandardMaterial({map:T[0],roughness:.5}),bm=new THREE.MeshStandardMaterial({color:0x141414,roughness:.6});
+const G=new THREE.Group(),mag=new THREE.Mesh(new THREE.BoxGeometry(2.24,3.12,.16),[pm,pm,pm,pm,fm,bm]);G.add(mag);sc.add(G);
+const fl=T.slice(1).map((t,i)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(1.1,1.54),new THREE.MeshBasicMaterial({map:t,transparent:true,opacity:.5,side:THREE.DoubleSide}));m.userData.a=i/5*Math.PI*2;G.add(m);return m});
+function size(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();const n=w<760;G.position.set(n?0:2.5,n?-1.3:0,0);G.scale.setScalar(n?.72:1)}
+size();addEventListener('resize',size);
+let px=0,py=0,on=true,ci=0,fs=-1;const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+addEventListener('pointermove',e=>{px=e.clientX/innerWidth-.5;py=e.clientY/innerHeight-.5});
+new IntersectionObserver(e=>on=e[0].isIntersecting).observe($('.hero'));
+function loop(t){requestAnimationFrame(loop);if(!on)return;
+if(!rm&&fs<0&&t%5000<30)fs=t;
+let spin=0;if(fs>=0){const p=(t-fs)/1300;if(p>=.5&&fm.map===T[ci]){ci=(ci+1)%ks.length;fm.map=T[ci];fm.needsUpdate=true}if(p>=1){fs=-1;mag.rotation.y-=Math.PI*2}else spin=(p<.5?2*p*p:1-2*(1-p)*(1-p))*Math.PI*2}
+mag.rotation.y+=((px*.7-.25+spin)-mag.rotation.y)*.08;mag.rotation.x+=((py*.4)-mag.rotation.x)*.08;
+fl.forEach((m,i)=>{const a=m.userData.a+(rm?0:t*.0002);m.position.set(Math.cos(a)*3.1,Math.sin(t*.0006+i)*.3+(i%2?.9:-.9),Math.sin(a)*1.6-1.8);m.rotation.y=-.3});
+R.render(sc,cam)}
+requestAnimationFrame(loop)})();
+</script>
+</body>
+</html>
